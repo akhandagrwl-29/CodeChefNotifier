@@ -1,0 +1,28 @@
+{
+    "name": "noti-codechef",
+    "description": "Extension for codechef notifictions",
+    "version": "1.0",
+    "manifest_version": 2,
+    "content_scripts" : [
+        {
+            "matches" : ["https://www.codechef.com/submit/*"],
+            "run_at": "document_idle",
+            "all_frames": true,
+            "js" : ["contentScript.js"]
+        }
+    ],
+    "background": {
+        "scripts": ["background.js", "jQuery-3.6.0.js"],
+        "persistent": true
+    },
+   "permissions": ["storage",
+        "webRequest",
+        "tabs",
+        "notifications",
+        "https://www.codechef.com/*"
+
+    ],
+    "browser_action": {
+        "default_icon": "logo.jpg"
+    }
+  }
